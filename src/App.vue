@@ -3,7 +3,7 @@
     <v-content>
       <router-view/>
     </v-content>
-    <v-footer :fixed="fixed" app>
+    <v-footer>
       <span>&copy; All right reserved</span>
     </v-footer>
   </v-app>
@@ -11,21 +11,6 @@
 
 <script>
 export default {
-  name: 'App',
-  data () {
-    return {
-      clipped: false,
-      drawer: true,
-      fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
-    }
-  }
+  name: 'App'
 }
 </script>

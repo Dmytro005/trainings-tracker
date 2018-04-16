@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+import About from '@/screens/About/AboutView'
+import Session from '@/screens/Session/SessionView'
 
 Vue.use(Router)
 
@@ -8,8 +10,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/session',
+      name: 'Session',
+      component: Session
     }
   ]
 })
