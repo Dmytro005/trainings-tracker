@@ -3,34 +3,33 @@
 import Vue from 'vue'
 import App from './App'
 import Vuetify from 'vuetify'
-import firebase from 'firebase'
+
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 import VueFire from 'vuefire'
+
 import 'vuetify/dist/vuetify.min.css'
 import './theme/main.sass'
 
 import router from './router'
 import store from './store'
 
-const firebaseApp = firebase.initializeApp({
+firebase.initializeApp({
   apiKey: 'AIzaSyCQPaJwAnY_CFgGXdWg0R6MitqUbGYVbqQ',
-  authDomain: 'trainings-tracker.firebaseapp.com',
   databaseURL: 'https://trainings-tracker.firebaseio.com',
-  projectId: 'trainings-tracker',
-  storageBucket: 'trainings-tracker.appspot.com',
-  messagingSenderId: '671859954787'
+  projectId: 'trainings-tracker'
 })
-
-// const db = firebaseApp.database()
 
 Vue.use(Vuetify)
 Vue.use(VueFire)
+
+export const db = firebase.firestore()
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  firebase: firebaseApp,
   store,
   router,
   components: { App },
